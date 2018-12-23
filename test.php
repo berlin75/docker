@@ -44,7 +44,7 @@ class MQ{
                 echo "From Master: $msg\n";
             }
         });
-        $process->useQueue(1, 2 | swoole_process::IPC_NOWAIT);
+        $process->useQueue(1, 2);
         $pid = $process->start();
         /*
         while (1){
