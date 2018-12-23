@@ -39,8 +39,10 @@ class MQ{
 
     public function runAction(){
         $process = new swoole_process(function(swoole_process $worker){
-            $msg = $worker->pop();
-            echo "From Master: $msg\n";
+            while(true){
+                $msg = $worker->pop();
+                echo "From Master: $msg\n";
+            }
         });
         $process->useQueue(1, 2 | swoole_process::IPC_NOWAIT);
         $pid = $process->start();
