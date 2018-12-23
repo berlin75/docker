@@ -16,7 +16,7 @@ class MQ{
         ini_set('default_socket_timeout', -1); //队列处理不超时,解决redis报错:read error on connection
     }
 
-    private function sig_handler($signo) {
+    public function sig_handler($signo) {
         switch ($signo) {
             case SIGCHLD:
                 while($ret = swoole_process::wait(false)) {
