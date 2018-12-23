@@ -72,8 +72,8 @@ class MQ{
 }
 
 $mq = new MQ;
-$mq->testAction();
-// $mq->runAction();
+// $mq->testAction();
+$mq->runAction();
 
 
 /*
