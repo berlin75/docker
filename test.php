@@ -42,6 +42,7 @@ class MQ{
             while(true){
                 $msg = $worker->pop();
                 echo "From Master: $msg\n";
+                var_dump($worker->statQueue());
             }
         });
         $process->useQueue(1, 2);
@@ -74,7 +75,9 @@ class MQ{
 }
 
 $mq = new MQ;
-// $mq->testAction();
+if($argv[1] == "in")
+$mq->testAction();
+elseif($argv[1] == "out")
 $mq->runAction();
 
 
