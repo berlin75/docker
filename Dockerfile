@@ -31,7 +31,7 @@ RUN buildDeps='unzip wget' \
 && make install \
 && docker-php-ext-enable swoole \
 && rm -rf /var/lib/apt/lists/* \
-&& rm -rf /tmp/swoole-src/* \
+&& rm -rf /tmp/swoole-src \
 && rm -r /usr/src/swoole \
 && apt-get purge -y --auto-remove $buildDeps
 WORKDIR /
