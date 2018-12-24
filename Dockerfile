@@ -1,7 +1,8 @@
 FROM php:7.1-cli
   
 WORKDIR /usr/src/swoole
-RUN buildDeps='unzip wget' \
+
+RUN buildDeps='unzip wget git' \
 # 修改apt源为163的源
 && echo "deb http://mirrors.163.com/debian/ jessie main non-free contrib" > /etc/apt/sources.list \
 && echo "deb http://mirrors.163.com/debian/ jessie-updates main non-free contrib" >> /etc/apt/sources.list \
