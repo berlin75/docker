@@ -1,4 +1,4 @@
-FROM php:7.1-cli
+FROM php
   
 WORKDIR /usr/src/swoole
 
@@ -23,7 +23,7 @@ RUN buildDeps='unzip wget git' \
 && docker-php-ext-enable redis \
 #安装mysql扩展
 && docker-php-ext-install pdo_mysql \
-#安装swoole1.10.1
+#安装swoole扩展
 && git clone https://github.com/swoole/swoole-src.git \
 && cd swoole-src \
 && phpize \
